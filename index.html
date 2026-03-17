@@ -85,12 +85,38 @@
 <script>
   function atualizarTempo() {
     const minutos = Math.floor(Math.random() * 4) + 1;
-    document.getElementById("tempo").innerText =
-      "⏰ Atualizado há " + minutos + " minutos";
+
+    let texto;
+
+    if (minutos === 1) {
+      const opcoes = [
+        "⏰ Atualizado agora",
+        "⏰ Atualizado agora mesmo",
+        "⏰ Atualizado recentemente"
+      ];
+      texto = opcoes[Math.floor(Math.random() * opcoes.length)];
+    } else if (minutos <= 3) {
+      const opcoes = [
+        "⏰ Atualizado há " + minutos + " minutos",
+        "⏰ Atualizado há poucos minutos",
+        "⏰ Atualizado recentemente"
+      ];
+      texto = opcoes[Math.floor(Math.random() * opcoes.length)];
+    } else {
+      const opcoes = [
+        "⏰ Atualizado há " + minutos + " minutos",
+        "⏰ Atualizado há alguns minutos",
+        "⏰ Atualizado recentemente"
+      ];
+      texto = opcoes[Math.floor(Math.random() * opcoes.length)];
+    }
+
+    document.getElementById("tempo").innerText = texto;
   }
 
   function atualizarVagas() {
     const vagas = Math.floor(Math.random() * 400) + 1;
+
     document.getElementById("vagas").innerText =
       "⚠️ Restam apenas " + vagas + " vagas neste grupo";
   }
@@ -98,8 +124,8 @@
   atualizarTempo();
   atualizarVagas();
 
-  setInterval(atualizarTempo, 60000); // atualiza tempo a cada 1 min
-  setInterval(atualizarVagas, 30000); // atualiza vagas a cada 30s
+  setInterval(atualizarTempo, 60000);
+  setInterval(atualizarVagas, 30000);
 </script>
 
 </body>
