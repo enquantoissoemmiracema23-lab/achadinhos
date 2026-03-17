@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Grupo de Ofertas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .box {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      max-width: 400px;
+      margin: auto;
+      box-shadow: 0 0 12px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      color: #111;
+      font-size: 22px;
+    }
+
+    p {
+      color: #555;
+      font-size: 14px;
+    }
+
+    .btn {
+      display: block;
+      background: #25D366;
+      color: #fff;
+      text-decoration: none;
+      padding: 15px;
+      margin: 10px 0;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      opacity: 0.9;
+    }
+
+    .full {
+      background: #ccc;
+      pointer-events: none;
+    }
+
+    .info {
+      margin-top: 10px;
+      font-size: 13px;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="box">
+  <h1>🛍️ Achadinhos com até 70% OFF ⚡</h1>
+  <p>Grupos com ofertas escondidas. Entre antes que lote.</p>
+
+  <!-- Tempo dinâmico -->
+  <p id="tempo" class="info"></p>
+
+  <!-- Vagas dinâmicas -->
+  <p id="vagas" class="info"></p>
+
+  <!-- Grupos -->
+  <a href="https://chat.whatsapp.com/KgB5H5S1ahz2sfXfFeRmyu" class="btn">👉 GRUPO 4 - Entrar no grupo com descontos</a>
+
+  <a class="btn full">Grupo 1 - Lotado</a>
+  <a class="btn full">Grupo 2 - Lotado</a>
+  <a class="btn full">Grupo 3 - Lotado</a>
+
+  <p class="info">⚠️ Promoções novas todos os dias ⚠️</p>
+</div>
+
+<script>
+  function atualizarTempo() {
+    const minutos = Math.floor(Math.random() * 4) + 1;
+    document.getElementById("tempo").innerText =
+      "⏰ Atualizado há " + minutos + " minutos";
+  }
+
+  function atualizarVagas() {
+    const vagas = Math.floor(Math.random() * 400) + 1;
+    document.getElementById("vagas").innerText =
+      "⚠️ Restam apenas " + vagas + " vagas neste grupo";
+  }
+
+  atualizarTempo();
+  atualizarVagas();
+
+  setInterval(atualizarTempo, 60000); // atualiza tempo a cada 1 min
+  setInterval(atualizarVagas, 30000); // atualiza vagas a cada 30s
+</script>
+
+</body>
+</html>
