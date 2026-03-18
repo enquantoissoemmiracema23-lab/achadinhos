@@ -75,51 +75,18 @@
   <!-- Grupos -->
   <a href="https://chat.whatsapp.com/KgB5H5S1ahz2sfXfFeRmyu" class="btn">👉 GRUPO 4 - Entrar no grupo com descontos</a>
 
-<<<<<<< HEAD
-=======
-  <a class="btn full">Grupo 3 - Lotado</a>
-  <a class="btn full">Grupo 2 - Lotado</a>
-  <a class="btn full">Grupo 1 - Lotado</a>
-
->>>>>>> ea1bceb173ecd2c1fa511520ce4eb0e2c6b4f58a
   <p class="info">⚠️ Promoções novas todos os dias ⚠️</p>
 </div>
 
 <script>
   function atualizarTempo() {
     const minutos = Math.floor(Math.random() * 4) + 1;
-
-    let texto;
-
-    if (minutos === 1) {
-      const opcoes = [
-        "⏰ Atualizado agora",
-        "⏰ Atualizado agora mesmo",
-        "⏰ Atualizado recentemente"
-      ];
-      texto = opcoes[Math.floor(Math.random() * opcoes.length)];
-    } else if (minutos <= 3) {
-      const opcoes = [
-        "⏰ Atualizado há " + minutos + " minutos",
-        "⏰ Atualizado há poucos minutos",
-        "⏰ Atualizado recentemente"
-      ];
-      texto = opcoes[Math.floor(Math.random() * opcoes.length)];
-    } else {
-      const opcoes = [
-        "⏰ Atualizado há " + minutos + " minutos",
-        "⏰ Atualizado há alguns minutos",
-        "⏰ Atualizado recentemente"
-      ];
-      texto = opcoes[Math.floor(Math.random() * opcoes.length)];
-    }
-
-    document.getElementById("tempo").innerText = texto;
+    document.getElementById("tempo").innerText =
+      "⏰ Atualizado há " + minutos + " minutos";
   }
 
   function atualizarVagas() {
     const vagas = Math.floor(Math.random() * 400) + 1;
-
     document.getElementById("vagas").innerText =
       "⚠️ Restam apenas " + vagas + " vagas neste grupo";
   }
@@ -127,8 +94,8 @@
   atualizarTempo();
   atualizarVagas();
 
-  setInterval(atualizarTempo, 60000);
-  setInterval(atualizarVagas, 30000);
+  setInterval(atualizarTempo, 60000); // atualiza tempo a cada 1 min
+  setInterval(atualizarVagas, 30000); // atualiza vagas a cada 30s
 </script>
 
 </body>
