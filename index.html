@@ -73,9 +73,10 @@
   <p id="vagas" class="info"></p>
 
   <!-- Grupos -->
-  <a href="https://chat.whatsapp.com/KgB5H5S1ahz2sfXfFeRmyu" class="btn">👉 GRUPO 4 - Entrar no grupo com descontos</a>
+  <a href="https://chat.whatsapp.com/KgB5H5S1ahz2sfXfFeRmyu" class="btn">👉 GRUPO 4 - 👉 Ver promoções escondidas</a>
 
-  <p class="info">⚠️ Promoções novas todos os dias ⚠️</p>
+  <p class="info">💸 Cupons ocultos todos os dias</p>
+  <p id="pessoas"></p>
 </div>
 
 <script>
@@ -86,16 +87,32 @@
   }
 
   function atualizarVagas() {
-    const vagas = Math.floor(Math.random() * 400) + 1;
+    const vagas = Math.floor(Math.random() * 100) + 1;
     document.getElementById("vagas").innerText =
       "⚠️ Restam apenas " + vagas + " vagas neste grupo";
   }
 
+  function atualizarPessoas() {
+    let pessoas = localStorage.getItem("pessoasEntraram");
+
+    if (!pessoas) {
+      pessoas = 2171;
+    } else {
+      pessoas = parseInt(pessoas) + 1;
+    }
+
+    localStorage.setItem("pessoasEntraram", pessoas);
+
+    document.getElementById("pessoas").innerText =
+      "👥 Mais de " + pessoas + " pessoas já entraram hoje";
+  }
+
   atualizarTempo();
   atualizarVagas();
+  atualizarPessoas();
 
-  setInterval(atualizarTempo, 60000); // atualiza tempo a cada 1 min
-  setInterval(atualizarVagas, 30000); // atualiza vagas a cada 30s
+  setInterval(atualizarTempo, 60000);
+  setInterval(atualizarVagas, 30000);
 </script>
 
 </body>
